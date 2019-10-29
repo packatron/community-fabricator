@@ -8,7 +8,7 @@ services:
       - WORDPRESS_DEBUG=1
       - WORDPRESS_DB_PASSWORD=secret
     ports:
-      - 17080:80
+      - 22080:80
     volumes:
       - ./wp-content:/var/www/html/wp-content:rw
       - ./:/var/www/html/wp-content/plugins/community-fabricator:rw
@@ -28,7 +28,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=secret
     ports:
-      - 17081:8080
+      - 22081:8080
 
   composer:
     image: composer

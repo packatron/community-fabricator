@@ -1,0 +1,29 @@
+{
+  "name": "packatron/community-fabricator",
+  "version": "0.0.1",
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Packatron\\CommunityFabricator\\": "src/",
+      "Packatron\\CommunityFabricator\\Tests\\": "tests/"
+    }
+  },
+  "require": {
+    "javanile/granular": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^6.5.3",
+    "composer/installers": "~1.0",
+    "wpackagist-plugin/loco-translate":"2.3.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "wp-content/plugins/{$name}/": ["type:wordpress-plugin"]
+    }
+  }
+}
