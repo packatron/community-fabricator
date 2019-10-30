@@ -9,6 +9,8 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
+<div class="card mb-3">
+	<div class="card-body">
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
@@ -41,3 +43,5 @@ defined( 'ABSPATH' ) || exit;
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
+	</div>
+</div>
