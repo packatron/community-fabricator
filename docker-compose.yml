@@ -31,14 +31,8 @@ services:
     ports:
       - 22081:8080
 
-  composer:
-    image: composer
-    user: 1000:1000
-    volumes:
-      - ./:/app
-
-  phpunit:
-    image: phpunit/phpunit:6.5.3
+  community-fabricator:
+    build: .
     user: 1000:1000
     volumes:
       - ./:/app

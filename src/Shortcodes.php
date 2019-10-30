@@ -29,7 +29,7 @@ class Shortcodes extends Bindable
                 title="Upload your media"]
                 [input type="text" name="post_title" id="title" class="required" description="Title"]
                 [textarea name="post_content" class="textarea" id="my-textarea" description="Description (optional)"]
-                [input type="submit" class="btn" value="Submit"]
+                [input type="submit" class="submit btn btn-primary" value="Submit"]
             [/fu-upload-form]
         ');
     }
