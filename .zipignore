@@ -1,1 +1,7 @@
-community-fabricator/vendor.bak/*
+community-fabricator-plugin/.git/*
+community-fabricator-plugin/.idea/*
+community-fabricator-plugin/.vscode/*
+community-fabricator-plugin/dist/*
+community-fabricator-plugin/vendor.bak/*
+community-fabricator-plugin/wp-content/*
+community-fabricator-plugin/theme/*
