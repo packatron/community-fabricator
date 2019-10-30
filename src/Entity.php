@@ -44,8 +44,8 @@ class Entity extends Bindable
         $args = array(
             'labels'             => $labels,
             'description'        => __( 'Description.', 'community-fabricator' ),
-            'public'             => true,
-            'publicly_queryable' => true,
+            'public'             => false,
+            'publicly_queryable' => false,
             'show_ui'            => true,
             'show_in_menu'       => true,
             'query_var'          => true,
@@ -79,6 +79,19 @@ class Entity extends Bindable
         ]);
 
         foreach ($entities as $entity) {
+            $supports = array(
+                'title',
+                //'editor',
+                //'author',
+                //'thumbnail',
+                //'excerpt',
+                //'comments'
+            );
+
+            if (get_post_meta($entity->ID, 'use_featured_image', true)) {
+                $supports[] = 'thumbnail';
+            }
+
             $labels = array(
                 'name'               => _x( $entity->post_title, 'post type general name', 'community-fabricator' ),
                 'singular_name'      => _x( $entity->post_title, 'post type singular name', 'community-fabricator' ),
@@ -111,14 +124,7 @@ class Entity extends Bindable
                 'hierarchical'       => false,
                 'menu_position'      => null,
                 'menu_icon'          => 'dashicons-category',
-                'supports'           => array(
-                    'title',
-                    //'editor',
-                    //'author',
-                    //'thumbnail',
-                    //'excerpt',
-                    //'comments'
-                )
+                'supports'           => $supports,
             );
 
             register_post_type($entity->post_name, $args);
@@ -130,23 +136,57 @@ class Entity extends Bindable
      */
     public function addEntityMetaBoxes($metaBoxes)
     {
+        $entityOptions = [];
+        $entities = get_posts([
+            'post_type' => 'entity',
+        ]);
+
+        foreach ($entities as $entity) {
+            $entityOptions[$entity->post_name] = $entity->post_title;
+        }
+
         $metaBoxes[] = array(
             'id' => 'untitled',
-            'title' => esc_html__( 'Untitled Metabox', 'metabox-online-generator' ),
+            'title' => esc_html__( 'Entity Properties', 'community-fabricator' ),
             'post_types' => array('entity'),
             'context' => 'advanced',
             'priority' => 'default',
             'autosave' => 'false',
             'fields' => array(
                 array(
+                    'id' => 'plural_name',
+                    'name' => esc_html__( 'Plural Name', 'community-fabricator' ),
+                    'type' => 'text',
+                    'desc' => esc_html__( 'Enable user to upload a featured image to entity', 'community-fabricator' ),
+                    'std' => 'asd',
+                ),
+                array(
+                    'id' => 'use_featured_image',
+                    'name' => esc_html__( 'Use Featured Image', 'community-fabricator' ),
+                    'type' => 'checkbox',
+                    'desc' => esc_html__( 'Enable user to upload a featured image to entity', 'community-fabricator' ),
+                ),
+                array(
+                    'id' => 'parent_entity',
+                    'name' => esc_html__( 'Parent Entity', 'community-fabricator' ),
+                    'type' => 'select',
+                    'placeholder' => esc_html__( 'No Parent', 'community-fabricator' ),
+                    'options' => $entityOptions,
+                ),
+                array(
                     'id' => 'textarea_1',
                     'type' => 'textarea',
-                    'name' => esc_html__( 'Textarea', 'metabox-online-generator' ),
+                    'name' => esc_html__( 'Textarea', 'community-fabricator' ),
+                ),
+                array(
+                    'id' => 'textarea_1',
+                    'type' => 'textarea',
+                    'name' => esc_html__( 'Textarea', 'community-fabricator' ),
                 ),
                 array(
                     'id' => 'textarea_1_copy_1',
                     'type' => 'textarea',
-                    'name' => esc_html__( 'Textarea', 'metabox-online-generator' ),
+                    'name' => esc_html__( 'Textarea', 'community-fabricator' ),
                 ),
             ),
         );
