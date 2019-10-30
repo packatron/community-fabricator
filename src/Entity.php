@@ -1,5 +1,5 @@
 <?php
-namespace Packatron\CommunityFabricator\Types;
+namespace Packatron\CommunityFabricator;
 
 use Javanile\Granular\Bindable;
 
@@ -10,6 +10,8 @@ class Entity extends Bindable
      */
     public static $bindings = [
         'action:init' => ['registerEntityPostType', 'registerEntitiesPostType'],
+        'filter:rwmb_meta_boxes' => ['addEntityMetaBoxes'],
+        'action:pre_get_posts:1:1' => ['routeEntityAdd'],
         /*'action:add_meta_boxes' => 'addMetaBox',
         'action:admin_enqueue_scripts' => 'adminEnqueueScripts',
         'action:save_post:10:2' => 'savePost',
@@ -48,6 +50,7 @@ class Entity extends Bindable
             'show_in_menu'       => true,
             'query_var'          => true,
             'rewrite'            => array( 'slug' => 'entity' ),
+            'cptp_permalink_structure' => '%postname%',
             'capability_type'    => 'post',
             'has_archive'        => true,
             'hierarchical'       => false,
@@ -101,7 +104,8 @@ class Entity extends Bindable
                 'show_ui'            => true,
                 'show_in_menu'       => true,
                 'query_var'          => true,
-                'rewrite'            => array( 'slug' => 'entity' ),
+                'rewrite'            => array( 'slug' => $entity->post_name ),
+                'cptp_permalink_structure' => '%postname%',
                 'capability_type'    => 'post',
                 'has_archive'        => true,
                 'hierarchical'       => false,
@@ -122,131 +126,50 @@ class Entity extends Bindable
     }
 
     /**
-     *
+     * @param $metaBoxes
      */
-    public function addMetaBox()
+    public function addEntityMetaBoxes($metaBoxes)
     {
-        /*
-        add_meta_box(
-            'Entity-meta-box',
-            __( 'Banners', 'sitepoint' ),
-            [$this, 'renderMetaBox'],
-            'Entity'
-        );*/
+        $metaBoxes[] = array(
+            'id' => 'untitled',
+            'title' => esc_html__( 'Untitled Metabox', 'metabox-online-generator' ),
+            'post_types' => array('entity'),
+            'context' => 'advanced',
+            'priority' => 'default',
+            'autosave' => 'false',
+            'fields' => array(
+                array(
+                    'id' => 'textarea_1',
+                    'type' => 'textarea',
+                    'name' => esc_html__( 'Textarea', 'metabox-online-generator' ),
+                ),
+                array(
+                    'id' => 'textarea_1_copy_1',
+                    'type' => 'textarea',
+                    'name' => esc_html__( 'Textarea', 'metabox-online-generator' ),
+                ),
+            ),
+        );
+
+        return $metaBoxes;
     }
 
     /**
      *
      */
-    public function getEntity($id)
+    public function routeEntityAdd($query)
     {
-        /*
-        $Entity = [
-            'width' => get_post_meta($id, 'width', true) ?: 250,
-            'height' => get_post_meta($id, 'height', true) ?: 250,
-            'bannerId' => [],
-            'bannerSrc' => [],
-            'bannerLink' => [],
-        ];
-
-        for ($i = 0; $i < 3; $i++) {
-            $Entity['bannerId'][$i] = get_post_meta($id, 'banner_id_'.$i, true) ?: '';
-            $Entity['bannerSrc'][$i] = get_post_meta($id, 'banner_src_'.$i, true) ?: '';
-            $Entity['bannerLink'][$i] = get_post_meta($id, 'banner_link_'.$i, true) ?: '';
-        }
-
-        return $Entity;*/
-    }
-
-    /**
-     * @param $ads
-     */
-    public function renderMetaBox($Entity)
-    {
-        /*
-        $Entity = $this->getEntity($Entity->ID);
-
-        include __DIR__.'/../../templates/Entity-meta-box.php';*/
-    }
-
-    /**
-     *
-     */
-    public function renderEntity($attr)
-    {
-        /*
-        if (empty($attr['id']) ||
-            get_post_status($attr['id']) != 'publish' ||
-            get_post_type($attr['id']) != 'Entity') {
-            return '';
-        }
-
-        $Entity = $this->getEntity($attr['id']);
-
-        ob_start();
-
-        include __DIR__.'/../../templates/Entity.php';
-
-        return ob_get_clean();*/
-    }
-
-    /**
-     *
-     */
-    public function wpEnqueueScripts()
-    {
-        /*
-        wp_enqueue_script(
-            'jquery-cycle-lite-js',
-            plugins_url('../../assets/js/jquery.cycle.lite.js', __FILE__),
-            array( 'jquery' )
-        );*/
-    }
-
-    /**
-     *
-     */
-    public function adminEnqueueScripts()
-    {
-        if (!is_admin()) {
+        if ( is_admin() || ! $query->is_main_query() ){
             return;
         }
 
-        wp_enqueue_media('media-upload');
-        wp_enqueue_media('thickbox');
-
-        wp_enqueue_script(
-            'community-fabricator-Entity-admin-js',
-            plugins_url('../../assets/js/Entity.admin.js', __FILE__),
-            array('jquery','media-upload','thickbox')
-        );
-
-        wp_enqueue_style(
-            'community-fabricator-admin-css',
-            plugins_url('../../assets/css/admin.css', __FILE__)
-        );
-    }
-
-    /**
-     * @param bool $postId
-     * @param bool $post
-     */
-    public function savePost($postId = false, $post = false)
-    {
-        if (wp_is_post_revision($postId) ||
-            wp_is_post_autosave($postId) ||
-            $post->post_type != 'Entity' ||
-            $post->post_status == 'auto-draft') {
+        if ($query->get('name') != 'add') {
             return;
         }
 
-        update_post_meta($postId, 'width', $_POST['Entity_width']);
-        update_post_meta($postId, 'height', $_POST['Entity_height']);
+        $query->set('post_type', 'page');
+        $query->set('is_home', false);
 
-        for ($i = 0; $i < 3; $i++) {
-            update_post_meta($postId, 'banner_id_'.$i, $_POST['Entity_banner_id_'.$i]);
-            update_post_meta($postId, 'banner_src_'.$i, $_POST['Entity_banner_src_'.$i]);
-            update_post_meta($postId, 'banner_link_'.$i, $_POST['Entity_banner_link_'.$i]);
-        }
+        return $query;
     }
 }
