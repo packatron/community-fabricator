@@ -19,8 +19,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 ?>
 
-<div class="card mb-3">
-	<div class="card-body">
 <div class="wrapper" id="page-wrapper">
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
@@ -55,7 +53,5 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</div><!-- #content -->
 
 </div><!-- #page-wrapper -->
-	</div>
-</div>
 
 <?php get_footer();

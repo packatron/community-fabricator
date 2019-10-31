@@ -59,22 +59,34 @@ $container = get_theme_mod( 'understrap_container_type' );
 				</button>
 
 				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav ml-auto',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'depth'           => 2,
-						'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
+
 
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
-					<ul class="navbar-nav mr-auto">
+					<?php wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'container_class' => 'collapse navbar-collapse',
+							'container_id'    => 'navbarNavDropdown',
+							'menu_class'      => 'navbar-nav mr-auto',
+							'fallback_cb'     => '',
+							'menu_id'         => 'main-menu',
+							'depth'           => 2,
+							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
+						)
+					); ?>
+
+					<form method="get" id="searchform" class="inline-form" action="http://localhost:22080/" role="search">
+						<label class="sr-only" for="s">Search</label>
+						<div class="input-group">
+							<input class="field form-control form-control-sm" id="s" name="s" type="text" placeholder="Search …" value="">
+							<span class="input-group-append">
+								<input class="submit btn btn-secondary btn-sm" id="searchsubmit" name="submit" type="submit" value="Search">
+							</span>
+						</div>
+					</form>
+
+					<!--ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
 							<a class="nav-link" href="#">Home
 								<span class="sr-only">(current)</span>
@@ -96,7 +108,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								<a class="dropdown-item" href="#">Something else here</a>
 							</div>
 						</li>
-					</ul>
+					</ul-->
 					<ul class="navbar-nav ml-auto nav-flex-icons">
 						<li class="nav-item">
 							<a class="nav-link waves-effect waves-light">1
