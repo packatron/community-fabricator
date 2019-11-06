@@ -33,6 +33,8 @@ services:
 
   community-fabricator:
     build: .
+    command: bash -c "echo prevent default > /dev/null"
+    working_dir: /app
     user: 1000:1000
     volumes:
       - ./:/app

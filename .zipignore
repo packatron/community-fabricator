@@ -5,3 +5,5 @@ community-fabricator-plugin/dist/*
 community-fabricator-plugin/vendor.bak/*
 community-fabricator-plugin/wp-content/*
 community-fabricator-plugin/theme/*
+community-fabricator-plugin/.zipignore
+community-fabricator-plugin/wp-cli.yml
