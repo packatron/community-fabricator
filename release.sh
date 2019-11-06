@@ -7,24 +7,24 @@ VERSION=$(grep version < composer.json | head -n 1 | sed 's/.*version//' | tr -d
 
 [[ -d /tmp/build ]] && rm -fr /tmp/build
 
-mkdir -p /tmp/build
 mkdir -p "${WORKDIR}/dist"
+mkdir -p /tmp/build/theme /tmp/build/plugin
 
-ln -s "${WORKDIR}/" "/tmp/build/${PACKAGE}-plugin"
-ln -s "${WORKDIR}/theme/" "/tmp/build/${PACKAGE}-theme"
+ln -s "${WORKDIR}/" "/tmp/build/plugin/${PACKAGE}"
+ln -s "${WORKDIR}/theme/" "/tmp/build/theme/${PACKAGE}"
 
 [[ -d vendor ]] && mv vendor vendor.bak
 [[ -f composer.lock ]] && mv composer.lock composer.lock.bak
 
 composer install --no-dev --prefer-dist
 
-cd /tmp/build
+cd /tmp/build/theme
+rm -rf "${WORKDIR}/dist/${PACKAGE}-theme-${VERSION}.zip"
+zip -r "${WORKDIR}/dist/${PACKAGE}-theme-${VERSION}.zip" "${PACKAGE}" -x "@${PACKAGE}/.zipignore"
 
-rm -rf ${WORKDIR}/dist/${PACKAGE}-theme-${VERSION}.zip
-rm -rf ${WORKDIR}/dist/${PACKAGE}-plugin-${VERSION}.zip
-
-zip -r "${WORKDIR}/dist/${PACKAGE}-theme-${VERSION}.zip" "${PACKAGE}-theme" -x "@${PACKAGE}-theme/.zipignore"
-zip -r "${WORKDIR}/dist/${PACKAGE}-plugin-${VERSION}.zip" "${PACKAGE}-plugin" -x "@${PACKAGE}-plugin/.zipignore"
+cd /tmp/build/plugin
+rm -rf "${WORKDIR}/dist/${PACKAGE}-plugin-${VERSION}.zip"
+zip -r "${WORKDIR}/dist/${PACKAGE}-plugin-${VERSION}.zip" "${PACKAGE}" -x "@${PACKAGE}/.zipignore"
 
 rm -fr /tmp/build
 

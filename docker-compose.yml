@@ -11,7 +11,7 @@ services:
       - 22080:80
     volumes:
       - ./wp-content:/var/www/html/wp-content:rw
-      - ./theme:/var/www/html/wp-content/themes/cummunity-frabricator:rw
+      - ./theme:/var/www/html/wp-content/themes/cummunity-fabricator:rw
       - ./:/var/www/html/wp-content/plugins/community-fabricator:rw
     links:
       - mysql

@@ -1,4 +1,8 @@
 <?php
+/**
+ *
+ */
+
 namespace Packatron\CommunityFabricator\Commands;
 
 use WP_CLI;
@@ -9,25 +13,19 @@ class CommunityInstall extends WP_CLI_Command
     /**
      * @when before_wp_load
      */
-    public function __invoke()
+    public function __invoke($args, $assoc_args)
     {
-        WP_CLI::line( "AA I don't need a WP install." );
-    }
+        $isInstalled = WP_CLI::runcommand('core is-installed', ['return' => 'all', 'exit_error' => false]);
 
-    /**
-     * @when before_wp_load
-     */
-    public function early( $args, $assoc_args )
-    {
-        WP_CLI::line( "I don't need a WP install." );
-    }
+        if ($isInstalled->return_code) {
+            $command = "core install"
+                . " --title='Community Fabricator'"
+                . " --admin_user='admin'"
+                . " --admin_email='admin@localhost.lan'"
+                . " --admin_password='admin'";
+            echo WP_CLI::runcommand($command, ['exit_error' => true]);
+        }
 
-    /**
-     * @param $args
-     * @param $assoc_args
-     */
-    public function normal( $args, $assoc_args )
-    {
-        WP_CLI::line( "I need a WP install." );
+        echo WP_CLI::runcommand('theme activate community-fabricator', ['exit_error' => true]);
     }
 }
