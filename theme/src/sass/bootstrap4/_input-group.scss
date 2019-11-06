@@ -33,7 +33,7 @@
   > .form-control:focus,
   > .custom-select:focus,
   > .custom-file .custom-file-input:focus ~ .custom-file-label {
-    z-index: 2;
+    z-index: 3;
   }
 
   // Bring the custom file input above the label

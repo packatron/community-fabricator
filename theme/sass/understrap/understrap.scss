@@ -101,6 +101,14 @@ a.skip-link {
   }
 }
 
+.navbar .navbar-brand {
+	font-weight: bold;
+}
+
+.navbar .navbar-brand a:hover {
+	text-decoration: none;
+}
+
 .navbar-light .navbar-brand a {
      color: $navbar-light-active-color;
 
