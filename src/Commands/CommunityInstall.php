@@ -27,5 +27,17 @@ class CommunityInstall extends WP_CLI_Command
         }
 
         echo WP_CLI::runcommand('theme activate community-fabricator', ['exit_error' => true]);
+
+        $plugins = [
+            "meta-box",
+            "frontend-uploader",
+            "custom-post-type-permalinks",
+            "loco-translate",
+            "wp-login-flow"
+        ];
+
+        foreach ($plugins as $plugin) {
+            echo WP_CLI::runcommand("plugin activate {$plugin}", ['exit_error' => true]);
+        }
     }
 }
