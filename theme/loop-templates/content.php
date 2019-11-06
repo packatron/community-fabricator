@@ -10,6 +10,8 @@ defined( 'ABSPATH' ) || exit;
 ?>
 
 <div class="card mb-3">
+	<?php echo get_the_post_thumbnail( $post->ID, 'large', ['class' => 'card-img-top']); ?>
+
 	<div class="card-body">
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
@@ -31,8 +33,6 @@ defined( 'ABSPATH' ) || exit;
 		<?php endif; ?>
 
 	</header><!-- .entry-header -->
-
-	<?php echo get_the_post_thumbnail( $post->ID, 'large' ); ?>
 
 	<div class="entry-content">
 
