@@ -120,9 +120,9 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 					'type'              => 'select',
 					'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
 					'choices'           => array(
+						'both'  => __( 'Left & Right sidebars', 'understrap' ),
 						'right' => __( 'Right sidebar', 'understrap' ),
 						'left'  => __( 'Left sidebar', 'understrap' ),
-						'both'  => __( 'Left & Right sidebars', 'understrap' ),
 						'none'  => __( 'No sidebar', 'understrap' ),
 					),
 					'priority'          => '20',

@@ -1,5 +1,5 @@
 <?php
-namespace Packatron\CommunityFabricator;
+namespace Packatron\CommunityFabricator\Bindings;
 
 use Javanile\Granular\Bindable;
 

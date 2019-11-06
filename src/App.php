@@ -11,7 +11,7 @@ class App extends Autoload
     public function run()
     {
         // autoload bindable classes
-        $this->autoload(__NAMESPACE__, __DIR__);
+        $this->autoload(__NAMESPACE__.'\\Bindings', __DIR__.'/Bindings');
 
         // bind init method as action init
         $this->bind('action:init:1', 'init');

@@ -109,27 +109,42 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</div>
 						</li>
 					</ul-->
-					<ul class="navbar-nav ml-auto nav-flex-icons">
-						<li class="nav-item">
-							<a class="nav-link waves-effect waves-light">1
-								<i class="fas fa-envelope"></i>
-							</a>
-						</li>
-						<li class="nav-item avatar dropdown">
-							<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
-							   aria-haspopup="true" aria-expanded="false">
-								<!--img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
-									 alt="avatar image"-->
-								<?php echo get_avatar(get_current_user_id(), 24, '', '', ['class' => 'rounded-circle z-depth-0']); ?>
-							</a>
-							<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
-								 aria-labelledby="navbarDropdownMenuLink-55">
-								<a class="dropdown-item" href="#">Action</a>
-								<a class="dropdown-item" href="#">Another action</a>
-								<a class="dropdown-item" href="#">Something else here</a>
-							</div>
-						</li>
-					</ul>
+					<?php if (is_user_logged_in()) { ?>
+						<ul class="navbar-nav ml-auto nav-flex-icons">
+							<li class="nav-item">
+								<a class="nav-link waves-effect waves-light">1
+									<i class="fas fa-envelope"></i>
+								</a>
+							</li>
+							<li class="nav-item avatar dropdown">
+								<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55" data-toggle="dropdown"
+								   aria-haspopup="true" aria-expanded="false">
+									<!--img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
+										 alt="avatar image"-->
+									<?php echo get_avatar(get_current_user_id(), 24, '', '', ['class' => 'rounded-circle z-depth-0']); ?>
+								</a>
+								<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+									 aria-labelledby="navbarDropdownMenuLink-55">
+									<a class="dropdown-item" href="#">Action</a>
+									<a class="dropdown-item" href="#">Another action</a>
+									<a class="dropdown-item" href="#">Something else here</a>
+								</div>
+							</li>
+						</ul>
+					<?php } else { ?>
+						<ul class="navbar-nav ml-auto nav-flex-icons">
+							<li class="nav-item">
+								<a href="<?php echo esc_url( home_url( '/register' ) ); ?>" class="nav-link waves-effect waves-light">
+									<?php esc_html_e( 'Register', 'understrap' ); ?>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a href="<?php echo esc_url( home_url( '/login' ) ); ?>" class="nav-link waves-effect waves-light">
+									<?php esc_html_e( 'Login', 'understrap' ); ?>
+								</a>
+							</li>
+						</ul>
+					<?php } ?>
 				</div>
 
 			<?php if ( 'container' == $container ) : ?>
