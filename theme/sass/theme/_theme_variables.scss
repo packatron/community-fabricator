@@ -3,9 +3,16 @@
 // Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
 
 $font-size-base: 0.9rem;
-$h2-font-size: 1.35rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.15rem;
 
+$card-border-radius: 0;
+$card-spacer-x: 0.6rem;
+
+$input-border-radius: 0;
 $input-btn-focus-box-shadow: none;
+
+$btn-border-radius: 0;
 
 $primary: #5533ff;
 
@@ -14,3 +21,5 @@ $navbar-dark-active-background: #102090;
 $navbar-padding-y: 0;
 
 $dropdown-spacer: 0px !default;
+
+$box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);

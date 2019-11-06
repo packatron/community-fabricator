@@ -1,4 +1,8 @@
 
+.navbar {
+  font-size: 1rem;
+}
+
 h2.entry-title {
   margin-bottom: 0;
 }
@@ -6,4 +10,24 @@ h2.entry-title {
 div.entry-meta {
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
+}
+
+.widget ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.widget ul:last-child {
+  margin-bottom: 0;
+}
+
+.widget ul li {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.widget ul li:before {
+  /*content: "+";
+  padding-right: 5px;*/
 }

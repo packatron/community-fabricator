@@ -58,7 +58,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<!-- The WordPress Menu goes here -->
+				<form method="get" id="searchform" class="inline-form" action="http://localhost:22080/" role="search">
+					<label class="sr-only" for="s">Search</label>
+					<div class="input-group">
+						<input class="field form-control form-control-sm" id="s" name="s" type="text" placeholder="Search …" value="">
+						<span class="input-group-append">
+								<input class="submit btn btn-secondary btn-sm" id="searchsubmit" name="submit" type="submit" value="Search">
+							</span>
+					</div>
+				</form>
 
 
 
@@ -76,15 +84,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 						)
 					); ?>
 
-					<form method="get" id="searchform" class="inline-form" action="http://localhost:22080/" role="search">
-						<label class="sr-only" for="s">Search</label>
-						<div class="input-group">
-							<input class="field form-control form-control-sm" id="s" name="s" type="text" placeholder="Search …" value="">
-							<span class="input-group-append">
-								<input class="submit btn btn-secondary btn-sm" id="searchsubmit" name="submit" type="submit" value="Search">
-							</span>
-						</div>
-					</form>
 
 					<!--ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
