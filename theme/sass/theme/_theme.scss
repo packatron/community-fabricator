@@ -31,3 +31,15 @@ div.entry-meta {
   /*content: "+";
   padding-right: 5px;*/
 }
+
+#navbar-searchform {
+  width: 300px;
+}
+
+#navbar-searchform input {
+  border: 1px solid #000;
+}
+
+#navbar-searchsubmit {
+  border-left: none !important;
+}

@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="card mb-3">
+<div class="card shadow mb-3">
 	<?php echo get_the_post_thumbnail( $post->ID, 'large', ['class' => 'card-img-top']); ?>
 
 	<div class="card-body">

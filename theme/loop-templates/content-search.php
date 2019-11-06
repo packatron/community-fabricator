@@ -9,7 +9,13 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
+<div class="card shadow mb-3">
+
+	<?php echo get_the_post_thumbnail( $post->ID, 'large', ['class' => 'card-img-top']); ?>
+
+	<div class="card-body">
+
+	<article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 
 	<header class="entry-header">
 
@@ -20,7 +26,7 @@ defined( 'ABSPATH' ) || exit;
 		);
 		?>
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		<!--?php if ( 'post' == get_post_type() ) : ?-->
 
 			<div class="entry-meta">
 
@@ -28,7 +34,7 @@ defined( 'ABSPATH' ) || exit;
 
 			</div><!-- .entry-meta -->
 
-		<?php endif; ?>
+		<!--?php endif; ?-->
 
 	</header><!-- .entry-header -->
 
@@ -45,3 +51,5 @@ defined( 'ABSPATH' ) || exit;
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-## -->
+	</div>
+</div>

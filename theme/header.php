@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+		<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container">
@@ -58,32 +58,33 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<span class="navbar-toggler-icon"></span>
 				</button>
 
-				<form method="get" id="searchform" class="inline-form" action="http://localhost:22080/" role="search">
-					<label class="sr-only" for="s">Search</label>
-					<div class="input-group">
-						<input class="field form-control form-control-sm" id="s" name="s" type="text" placeholder="Search …" value="">
-						<span class="input-group-append">
-								<input class="submit btn btn-secondary btn-sm" id="searchsubmit" name="submit" type="submit" value="Search">
-							</span>
-					</div>
-				</form>
 
 
 
 				<div class="collapse navbar-collapse" id="navbarSupportedContent-555">
+
+					<form method="get" id="navbar-searchform" class="inline-form" action="http://localhost:22080/" role="search">
+						<label class="sr-only" for="s">Search</label>
+						<div class="input-group">
+							<input class="field form-control form-control-sm" id="s" name="s" type="text" placeholder="Search …" value="">
+							<span class="input-group-append">
+								<input class="submit btn btn-secondary btn-sm" id="navbar-searchsubmit" name="submit" type="submit" value="Search">
+							</span>
+						</div>
+					</form>
+
 					<?php wp_nav_menu(
 						array(
 							'theme_location'  => 'primary',
 							'container_class' => 'collapse navbar-collapse',
 							'container_id'    => 'navbarNavDropdown',
-							'menu_class'      => 'navbar-nav mr-auto',
+							'menu_class'      => 'navbar-nav ml-auto',
 							'fallback_cb'     => '',
 							'menu_id'         => 'main-menu',
 							'depth'           => 2,
 							'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 						)
 					); ?>
-
 
 					<!--ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
@@ -108,6 +109,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 							</div>
 						</li>
 					</ul-->
+
 					<?php if (is_user_logged_in()) { ?>
 						<ul class="navbar-nav ml-auto nav-flex-icons">
 							<li class="nav-item">
@@ -120,7 +122,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 								   aria-haspopup="true" aria-expanded="false">
 									<!--img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
 										 alt="avatar image"-->
-									<?php echo get_avatar(get_current_user_id(), 24, '', '', ['class' => 'rounded-circle z-depth-0']); ?>
+									<?php echo get_avatar(get_current_user_id(), 22, '', '', ['class' => 'rounded-circle z-depth-0']); ?>
 								</a>
 								<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
 									 aria-labelledby="navbarDropdownMenuLink-55">
