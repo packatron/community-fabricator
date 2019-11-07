@@ -1,4 +1,8 @@
 
+#page {
+  padding-top: 2.5rem;
+}
+
 .navbar {
   font-size: 1rem;
 }
@@ -42,4 +46,28 @@ div.entry-meta {
 
 #navbar-searchsubmit {
   border-left: none !important;
+}
+
+.navbar .dropdown.show > a {
+  background: #4422cc;
+}
+
+div.entry-meta {
+  color: #999999;
+  font-size: 0.8rem;
+}
+
+div.entry-meta a {
+  color: #999999;
+  text-decoration: underline;
+}
+
+footer.site-footer {
+  color: #cccccc;
+  font-size: 0.8rem;
+}
+
+footer.site-footer a {
+  color: #cccccc;
+  text-decoration: underline;
 }

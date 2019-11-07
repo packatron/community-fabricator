@@ -15,6 +15,7 @@ class App extends Autoload
 
         // bind init method as action init
         $this->bind('action:init:1', 'init');
+        $this->bind('filter:show_admin_bar', 'disableAdminBar');
     }
 
     /**
@@ -23,5 +24,13 @@ class App extends Autoload
     public function init()
     {
         load_plugin_textdomain('community-fabricator', false, 'community-fabricator/languages');
+    }
+
+    /**
+     *
+     */
+    public function disableAdminBar()
+    {
+        return false;
     }
 }

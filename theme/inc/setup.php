@@ -129,11 +129,14 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 	 *
 	 * @return string
 	 */
-	function understrap_all_excerpts_get_more_link( $post_excerpt ) {
+	function understrap_all_excerpts_get_more_link( $post_excerpt )
+	{
 		if ( ! is_admin() ) {
-			$post_excerpt = $post_excerpt . ' [...]<p><a class="btn btn-secondary understrap-read-more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . __( 'Read More...',
-			'understrap' ) . '</a></p>';
+			$post_excerpt = ucfirst($post_excerpt) . '... <a href="'
+				. esc_url( get_permalink( get_the_ID() ) ) . '">'
+				. __( 'Read More', 'understrap' ) . '</a>';
 		}
+
 		return $post_excerpt;
 	}
 }

@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-primary shadow">
+		<nav class="navbar navbar-expand-md fixed-top navbar-dark bg-primary shadow">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container">
@@ -122,13 +122,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 								   aria-haspopup="true" aria-expanded="false">
 									<!--img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" class="rounded-circle z-depth-0"
 										 alt="avatar image"-->
-									<?php echo get_avatar(get_current_user_id(), 22, '', '', ['class' => 'rounded-circle z-depth-0']); ?>
+									<?php echo get_avatar(get_current_user_id(), 20, '', '', ['class' => 'rounded-circle z-depth-0']); ?>
 								</a>
-								<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+								<div class="dropdown-menu dropdown-menu-lg-right dropdown-secondary shadow"
 									 aria-labelledby="navbarDropdownMenuLink-55">
 									<a class="dropdown-item" href="#">Action</a>
 									<a class="dropdown-item" href="#">Another action</a>
 									<a class="dropdown-item" href="#">Something else here</a>
+									<div class="dropdown-divider"></div>
+									<a class="dropdown-item" href="#"><?php esc_html_e( 'Logout', 'understrap' ); ?></a>
 								</div>
 							</li>
 						</ul>
