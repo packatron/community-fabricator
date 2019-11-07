@@ -26,9 +26,11 @@ class ContextWidget extends WP_Widget
      * @param array $instance The settings for the particular instance of the widget.
      */
     function widget( $args, $instance ) {
-
-        echo "BBB";
-        return "AAA";
+        ?>
+        <div class="card shadow">
+            <?php echo get_avatar(get_current_user_id(), 96, '', '', ['class' => 'card-img-top z-depth-0']); ?>
+        </div>
+        <?php
     }
 
     /**

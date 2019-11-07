@@ -9,7 +9,7 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
-<div class="card mb-3">
+<div class="card shadow mb-3">
 	<div class="card-body">
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
 

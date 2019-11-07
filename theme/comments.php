@@ -84,7 +84,7 @@ if ( post_password_required() ) {
 				array(
 					'walker' => new class extends Walker_Comment {
 						protected function html5_comment( $comment, $depth, $args ) {
-							echo '<div class="card"><div class="card-body">';
+							echo '<div class="card shadow"><div class="card-body">';
 							parent::html5_comment( $comment, $depth, $args );
 							echo '</div></div>';
 						}

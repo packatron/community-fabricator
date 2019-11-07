@@ -21,7 +21,7 @@ class Post extends Bindable
      */
     public function filterTitle($title)
     {
-        $title = str_replace('Private: ', '', $title);
+        $title = str_replace(['Private: ', 'Privato: '], '', $title);
 
         return ucfirst($title);
     }
