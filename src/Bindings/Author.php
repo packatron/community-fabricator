@@ -3,7 +3,7 @@ namespace Packatron\CommunityFabricator\Bindings;
 
 use Javanile\Granular\Bindable;
 
-class Entity extends Bindable
+class Author extends Bindable
 {
     /**
      * @var array

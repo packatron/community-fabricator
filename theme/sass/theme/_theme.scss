@@ -7,7 +7,7 @@
   font-size: 1rem;
 }
 
-h2.entry-title {
+h1.entry-title, h2.entry-title, h3.entry-title {
   margin-bottom: 0;
 }
 
@@ -62,6 +62,10 @@ div.entry-meta a {
   text-decoration: underline;
 }
 
+footer.entry-footer {
+  font-size: 0.8rem;
+}
+
 footer.site-footer {
   color: #cccccc;
   font-size: 0.8rem;
@@ -70,4 +74,8 @@ footer.site-footer {
 footer.site-footer a {
   color: #cccccc;
   text-decoration: underline;
+}
+
+section.not-found {
+  text-align: center;
 }

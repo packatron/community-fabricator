@@ -16,28 +16,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
-		<div class="row">
-			<div class="col-md content-area mb-3">
-				<div class="card">
-					<?php echo get_the_post_thumbnail( get_the_id(), 'large', ['class' => 'card-img-top']); ?>
+		<?php if (get_post_type() != 'post') { ?>
+			<div class="row">
+				<div class="col-md content-area mb-3">
+					<div class="card shadow">
+						<?php echo get_the_post_thumbnail( get_the_id(), 'large', ['class' => 'card-img-top']); ?>
 
-					<div class="card-footer">
-						<ul class="nav nav-pills card-header-pills">
-							<li class="nav-item">
-								<a class="nav-link active" href="#">Active</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Link</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-							</li>
-						</ul>
+						<div class="card-footer">
+							<ul class="nav nav-pills card-header-pills">
+								<li class="nav-item">
+									<a class="nav-link active" href="#">Active</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#">Link</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-
+		<?php } ?>
 
 		<div class="row">
 

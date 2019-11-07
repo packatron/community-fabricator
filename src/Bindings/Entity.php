@@ -12,11 +12,6 @@ class Entity extends Bindable
         'action:init' => ['registerEntityPostType', 'registerEntitiesPostType'],
         'filter:rwmb_meta_boxes' => ['addEntityMetaBoxes'],
         'action:pre_get_posts:1:1' => ['routeEntityAdd'],
-        /*'action:add_meta_boxes' => 'addMetaBox',
-        'action:admin_enqueue_scripts' => 'adminEnqueueScripts',
-        'action:save_post:10:2' => 'savePost',
-        'action:wp_enqueue_scripts' => 'wpEnqueueScripts',
-        'shortcode:Entity' => 'renderEntity',*/
     ];
 
     /**
@@ -121,6 +116,7 @@ class Entity extends Bindable
                 'cptp_permalink_structure' => '%postname%',
                 'capability_type'    => 'post',
                 'has_archive'        => true,
+                'exclude_from_search' => false,
                 'hierarchical'       => false,
                 'menu_position'      => null,
                 'menu_icon'          => 'dashicons-category',

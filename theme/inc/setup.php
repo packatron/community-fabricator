@@ -134,7 +134,7 @@ if ( ! function_exists( 'understrap_all_excerpts_get_more_link' ) ) {
 		if ( ! is_admin() ) {
 			$post_excerpt = ucfirst($post_excerpt) . '... <a href="'
 				. esc_url( get_permalink( get_the_ID() ) ) . '">'
-				. __( 'Read More', 'understrap' ) . '</a>';
+				. __( 'See more', 'understrap' ) . '</a>';
 		}
 
 		return $post_excerpt;
