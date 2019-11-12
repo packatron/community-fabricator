@@ -14,7 +14,8 @@
     }
   },
   "require": {
-    "javanile/granular": "*"
+    "javanile/granular": "*",
+    "symfony/yaml": "^4.3"
   },
   "require-dev": {
     "phpunit/phpunit": "^6.5.3",
