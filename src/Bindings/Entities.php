@@ -14,7 +14,6 @@ class Entities extends Bindable
         'filter:rwmb_meta_boxes' => ['addEntitiesMetaBoxes'],
     ];
 
-
     /**
      *
      */
@@ -89,12 +88,16 @@ class Entities extends Bindable
         ]);
 
         foreach ($entities as $entity) {
-            $fields = Yaml::parse(str_replace("\t", "    ", get_post_meta($entity->ID, 'fields', true)));
+            try {
+                $fields = Yaml::parse(str_replace("\t", "    ", get_post_meta($entity->ID, 'fields', true)));
+            } catch (\Throwable $exception) {
+                $fields = [];
+            }
             if (!$fields || !is_array($fields)) {
                 $fields = [];
             }
             $metaBoxes[] = array(
-                'id' => 'untitled',
+                'id' => 'metabox-entity-'.$entity->post_name,
                 'title' => esc_html__( 'Entity Properties', 'community-fabricator' ),
                 'post_types' => array($entity->post_name),
                 'context' => 'advanced',

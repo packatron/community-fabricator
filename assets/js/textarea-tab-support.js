@@ -2,8 +2,9 @@ jQuery(function() {
     var enabled = true;
     jQuery("textarea.tab-support, div.tab-support textarea")
         .css({
+            fontFamily: "monospace",
             width: "100%",
-            height: "100px",
+            height: "300px",
             tabSize: "4"
         })
         .keydown(function(e) {

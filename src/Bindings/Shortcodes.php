@@ -2,6 +2,7 @@
 namespace Packatron\CommunityFabricator\Bindings;
 
 use Javanile\Granular\Bindable;
+use RWMB_Meta_Box_Registry;
 
 class Shortcodes extends Bindable
 {
@@ -9,7 +10,8 @@ class Shortcodes extends Bindable
      * @var array
      */
     public static $bindings = [
-        'shortcode:entityadd' => 'entityAddShortcode'
+        'shortcode:entityadd' => 'entityAddShortcode',
+        'shortcode:entityedit' => 'entityEditShortcode',
     ];
 
     /**
@@ -32,5 +34,20 @@ class Shortcodes extends Bindable
                 [input type="submit" class="submit btn btn-primary" value="Submit"]
             [/fu-upload-form]
         ');
+    }
+
+    /**
+     *
+     */
+    public function entityEditShortcode()
+    {
+        $registry = rwmb_get_registry( 'meta_box' );
+
+        $metaBox = $registry->get('metabox-entity-forum');
+
+        $metaBox->set_object_id(22);
+        $metaBox->show();
+
+        return "AAA";
     }
 }
