@@ -2,6 +2,7 @@
 namespace Packatron\CommunityFabricator\Bindings;
 
 use Javanile\Granular\Bindable;
+use Packatron\CommunityFabricator\Helpers\Language;
 
 class Entity extends Bindable
 {
@@ -11,6 +12,7 @@ class Entity extends Bindable
     public static $bindings = [
         'action:init' => ['registerEntityPostType'],
         'filter:rwmb_meta_boxes' => ['addEntityMetaBoxes'],
+        'action:post_updated:10:3' => ['postUpdated'],
     ];
 
     /**
@@ -117,4 +119,15 @@ class Entity extends Bindable
         return $metaBoxes;
     }
 
+    /**
+     *
+     */
+    public function postUpdated($postId, $postAfter, $postBefore)
+    {
+        if (get_post_type($postId) != 'entity') {
+            return;
+        }
+
+        Language::generateTranslations();
+    }
 }

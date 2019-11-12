@@ -4,6 +4,7 @@ build/
 vendor/
 node_modules/
 theme/node_modules/
+theme/translations.php
 npm-debug.log
 wp-content
 !wp-content/uploads/.gitkeep

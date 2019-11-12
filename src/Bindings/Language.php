@@ -10,6 +10,8 @@ class Language extends Bindable
      */
     public static $bindings = [
         'action:init:1' => ['init'],
+        'action:plugins_loaded' => ['pluginsLoaded'],
+        'action:after_setup_theme' => ['afterSetupTheme'],
     ];
 
     /**
@@ -29,7 +31,21 @@ class Language extends Bindable
 
             switch_to_locale($locale);
         }
+    }
 
+    /**
+     *
+     */
+    public function afterSetupTheme()
+    {
+        //load_theme_textdomain('community-fabricator');
+    }
+
+    /**
+     *
+     */
+    public function pluginsLoaded()
+    {
         load_plugin_textdomain('community-fabricator', false, 'community-fabricator/languages');
     }
 }

@@ -35,7 +35,7 @@ $filterPostType = $wp_query->get('post_type')
 					<h1 class="page-title">
 						<?php
 						printf(
-							esc_html__( 'Search Results for: %s', 'understrap' ),
+							esc_html__( 'Search Results for: %s', 'community-fabricator' ),
 							'<span>' . get_search_query() . '</span>'
 						);
 						?>
@@ -46,14 +46,14 @@ $filterPostType = $wp_query->get('post_type')
 					<li class="nav-item">
 						<a class="nav-link <?=$filterPostType == 'any' ? 'active' : ''?>"
 						   href="<?=add_query_arg('post_type', 'any', Http::getCurrentUrl()); ?>">
-							<?php echo esc_html__( 'All', 'understrap' ); ?>
+							<?php echo esc_html__( 'All', 'community-fabricator' ); ?>
 						</a>
 					</li>
 					<?php foreach (Entities::getAll() as $entity) { ?>
 						<li class="nav-item">
 							<a class="nav-link <?=$filterPostType == $entity->post_name ? 'active' : ''?>"
 							   href="<?=add_query_arg('post_type', $entity->post_name, Http::getCurrentUrl()); ?>">
-								<?php echo esc_html__($entity->post_title, 'understrap'); ?>
+								<?php echo esc_html__($entity->post_title, 'community-fabricator'); ?>
 							</a>
 						</li>
 					<?php } ?>

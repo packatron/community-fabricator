@@ -1,14 +1,15 @@
-# Loco Gettext template
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: understrap\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/theme/_s\n"
 "POT-Creation-Date: 2019-11-12 02:39+0000\n"
 "POT-Revision-Date: Mon Jul 04 2016 09:13:18 GMT+0200 (CEST)\n"
-"PO-Revision-Date: 2019-11-12 02:40+0000\n"
-"Language-Team: Italiano\n"
-"Language: it_IT\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,7 +21,6 @@ msgstr ""
 "esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
 "esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
 "X-Poedit-Basepath: ..\n"
-"Last-Translator: admin <bianco@javanile.org>\n"
 "X-Poedit-SearchPath-0: footer.php\n"
 "X-Poedit-SearchPath-1: header.php\n"
 "X-Poedit-SearchPath-2: index.php\n"
@@ -41,21 +41,21 @@ msgstr ""
 "X-Poedit-SearchPath-17: hero.php\n"
 "X-Poedit-SearchPath-18: page.php\n"
 "X-Poedit-SearchPath-19: functions.php\n"
-"X-Poedit-SearchPath-20: page-templates\n"
-"X-Poedit-SearchPath-21: inc\n"
-"X-Loco-Version: 2.3.0; wp-5.2.4"
+"X-Poedit-SearchPath-20: translations.php\n"
+"X-Poedit-SearchPath-21: page-templates\n"
+"X-Poedit-SearchPath-22: inc"
 
 #: author.php:38
 msgid "About:"
-msgstr "Informazioni:"
+msgstr ""
 
 #: author.php:47 inc/custom-comments.php:37
 msgid "Website"
-msgstr "Sito Web"
+msgstr ""
 
 #: author.php:54
 msgid "Profile"
-msgstr "Profilo"
+msgstr ""
 
 #: author.php:74
 msgid "Permanent Link:"
@@ -75,11 +75,11 @@ msgstr ""
 
 #: translations.php:4
 msgid "Organization"
-msgstr "Organizzazione"
+msgstr ""
 
 #: translations.php:5
 msgid "Organizations"
-msgstr "Organizzazioni"
+msgstr ""
 
 #: translations.php:6
 msgid "Topic"
@@ -103,15 +103,15 @@ msgstr ""
 
 #: searchform.php:13 searchform.php:19
 msgid "Search"
-msgstr "Cerca"
+msgstr ""
 
 #: searchform.php:16
 msgid "Search &hellip;"
-msgstr "Cerca &hellip;"
+msgstr ""
 
 #: header.php:31
 msgid "Skip to content"
-msgstr "Vai al contenuto"
+msgstr ""
 
 #: header.php:57
 msgid "Toggle navigation"
@@ -150,24 +150,24 @@ msgstr[1] ""
 
 #: comments.php:62 comments.php:104
 msgid "Comment navigation"
-msgstr "Navigazione commenti"
+msgstr ""
 
 #: comments.php:66 comments.php:108
 msgid "&larr; Older Comments"
-msgstr "&larr; Commenti meno recenti"
+msgstr ""
 
 #: comments.php:72 comments.php:114
 msgid "Newer Comments &rarr;"
-msgstr "Commenti più recenti &rarr;"
+msgstr ""
 
 #: comments.php:129
 msgid "Comments are closed."
-msgstr "Commenti disabilitati."
+msgstr ""
 
 #: search.php:38
 #, php-format
 msgid "Search Results for: %s"
-msgstr "Risultati della ricerca per: %s"
+msgstr ""
 
 #: search.php:49
 msgid "All"
@@ -175,25 +175,23 @@ msgstr ""
 
 #: 404.php:30
 msgid "Oops! That page can&rsquo;t be found."
-msgstr "Oops! Quella pagina non può essere trovata."
+msgstr ""
 
 #: 404.php:36
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 msgstr ""
-"Sembra che nulla sia stato trovato a questo indirizzo. Magari prova uno dei "
-"link sotto o una ricerca?"
 
 #: 404.php:46
 msgid "Most Used Categories"
-msgstr "Categorie più utilizzate"
+msgstr ""
 
 #. translators: %1$s: smiley
 #: 404.php:69
 #, php-format
 msgid "Try looking in the monthly archives. %1$s"
-msgstr "Prova a cercare tra gli archivi mensili. %1$s"
+msgstr ""
 
 #. Name of the template
 msgid "Left and Right Sidebar Layout"
@@ -201,11 +199,11 @@ msgstr ""
 
 #. Name of the template
 msgid "Empty Page Template"
-msgstr "Template Pagina Vuota"
+msgstr ""
 
 #. Name of the template
 msgid "Full Width Page"
-msgstr "Pagina a Larghezza Intera"
+msgstr ""
 
 #. Name of the template
 msgid "Right Sidebar Layout"
@@ -248,11 +246,11 @@ msgstr ""
 
 #: inc/custom-comments.php:31
 msgid "Name"
-msgstr "Nome"
+msgstr ""
 
 #: inc/custom-comments.php:34
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: inc/custom-comments.php:41
 msgid ""
@@ -262,7 +260,7 @@ msgstr ""
 #: inc/custom-comments.php:62
 msgctxt "noun"
 msgid "Comment"
-msgstr "Commento"
+msgstr ""
 
 #: inc/pagination.php:24
 msgid "&laquo;"
@@ -328,22 +326,22 @@ msgstr ""
 
 #: inc/hooks.php:31
 msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+msgstr ""
 
 #: inc/hooks.php:34
 #, php-format
 msgid "Proudly powered by %s"
-msgstr "Orgogliosamente realizzato con %s"
+msgstr ""
 
 #: inc/hooks.php:39
 #, php-format
 msgid "Theme: %1$s by %2$s."
-msgstr "Tema: %1$s di %2$s."
+msgstr ""
 
 #. Theme URI of the theme
 #: inc/hooks.php:41
 msgid "http://understrap.com"
-msgstr "http://understrap.com"
+msgstr ""
 
 #: inc/hooks.php:45
 #, php-format
@@ -356,7 +354,7 @@ msgstr ""
 
 #: inc/setup.php:48
 msgid "Primary Menu"
-msgstr "Menù Principale"
+msgstr ""
 
 #: inc/setup.php:137
 msgid "See more"
@@ -384,7 +382,7 @@ msgstr ""
 
 #: inc/widgets.php:124
 msgid "Hero Slider"
-msgstr "Blocco Iniziale con Carosello "
+msgstr ""
 
 #: inc/widgets.php:126
 msgid "Hero slider area. Place two or more widgets here and they will slide!"
@@ -408,7 +406,7 @@ msgstr ""
 
 #: inc/widgets.php:160
 msgid "Footer Full"
-msgstr "Piè di pagina Larghezza Intera"
+msgstr ""
 
 #: inc/widgets.php:162
 msgid "Full sized footer widget with dynamic grid"
@@ -422,7 +420,7 @@ msgstr ""
 #. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:61 inc/template-tags.php:67
 msgid ", "
-msgstr ", "
+msgstr ""
 
 #. %s: Categories of current post
 #: inc/template-tags.php:64
@@ -442,45 +440,42 @@ msgstr ""
 
 #: inc/template-tags.php:75
 msgid "1 Comment"
-msgstr "1 Commento"
+msgstr ""
 
 #: inc/template-tags.php:75
 msgid "% Comments"
-msgstr "% Commenti"
+msgstr ""
 
 #. translators: %s: Name of current post
 #: inc/template-tags.php:81
 #, php-format
 msgid "Edit %s"
-msgstr "Modifica %s"
+msgstr ""
 
 #: loop-templates/content-page.php:31 loop-templates/content-single.php:38
 #: loop-templates/content.php:44
 msgid "Pages:"
-msgstr "Pagine:"
+msgstr ""
 
 #: loop-templates/content-page.php:41 woocommerce/myaccount/my-address.php:53
 msgid "Edit"
-msgstr "Modifica"
+msgstr ""
 
 #: loop-templates/content-none.php:17
 msgid "Nothing Found"
-msgstr "Nessun Risultato"
+msgstr ""
 
 #: loop-templates/content-none.php:24
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
-"Pronto a pubblicare il tuo primo articolo? <a href=\"%1$s\">Inizia qui</a>."
 
 #: loop-templates/content-none.php:32
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
-"Spiacente, ma non ci sono riscontri con i tuoi termini di ricerca. Per "
-"favore riprova con altre parole chiavi."
 
 #: loop-templates/content-none.php:33
 msgid ""
@@ -493,7 +488,6 @@ msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
 msgstr ""
-"Sembra che non troviamo quello che cerchi. Forse una ricerca può aiutare."
 
 #: sidebar-templates/sidebar-hero.php:28 woocommerce/myaccount/orders.php:89
 msgid "Previous"
@@ -821,8 +815,8 @@ msgstr ""
 
 #. Author of the theme
 msgid "Holger Koenemann"
-msgstr "Holger Koenemann"
+msgstr ""
 
 #. Author URI of the theme
 msgid "http://www.holgerkoenemann.de"
-msgstr "http://www.holgerkoenemann.de"
+msgstr ""

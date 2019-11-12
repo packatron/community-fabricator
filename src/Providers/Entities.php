@@ -14,6 +14,7 @@ class Entities
     {
         $entities = get_posts([
             'post_type' => 'entity',
+            'posts_per_page' => -1,
         ]);
 
         return $entities;

@@ -39,9 +39,9 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 		$wp_customize->add_section(
 			'understrap_theme_layout_options',
 			array(
-				'title'       => __( 'Theme Layout Settings', 'understrap' ),
+				'title'       => __( 'Theme Layout Settings', 'community-fabricator' ),
 				'capability'  => 'edit_theme_options',
-				'description' => __( 'Container width and sidebar defaults', 'understrap' ),
+				'description' => __( 'Container width and sidebar defaults', 'community-fabricator' ),
 				'priority'    => 160,
 			)
 		);
@@ -81,14 +81,14 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 				$wp_customize,
 				'understrap_container_type',
 				array(
-					'label'       => __( 'Container Width', 'understrap' ),
-					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'understrap' ),
+					'label'       => __( 'Container Width', 'community-fabricator' ),
+					'description' => __( 'Choose between Bootstrap\'s container and container-fluid', 'community-fabricator' ),
 					'section'     => 'understrap_theme_layout_options',
 					'settings'    => 'understrap_container_type',
 					'type'        => 'select',
 					'choices'     => array(
-						'container'       => __( 'Fixed width container', 'understrap' ),
-						'container-fluid' => __( 'Full width container', 'understrap' ),
+						'container'       => __( 'Fixed width container', 'community-fabricator' ),
+						'container-fluid' => __( 'Full width container', 'community-fabricator' ),
 					),
 					'priority'    => '10',
 				)
@@ -110,20 +110,20 @@ if ( ! function_exists( 'understrap_theme_customize_register' ) ) {
 				$wp_customize,
 				'understrap_sidebar_position',
 				array(
-					'label'             => __( 'Sidebar Positioning', 'understrap' ),
+					'label'             => __( 'Sidebar Positioning', 'community-fabricator' ),
 					'description'       => __(
 						'Set sidebar\'s default position. Can either be: right, left, both or none. Note: this can be overridden on individual pages.',
-						'understrap'
+						'community-fabricator'
 					),
 					'section'           => 'understrap_theme_layout_options',
 					'settings'          => 'understrap_sidebar_position',
 					'type'              => 'select',
 					'sanitize_callback' => 'understrap_theme_slug_sanitize_select',
 					'choices'           => array(
-						'both'  => __( 'Left & Right sidebars', 'understrap' ),
-						'right' => __( 'Right sidebar', 'understrap' ),
-						'left'  => __( 'Left sidebar', 'understrap' ),
-						'none'  => __( 'No sidebar', 'understrap' ),
+						'both'  => __( 'Left & Right sidebars', 'community-fabricator' ),
+						'right' => __( 'Right sidebar', 'community-fabricator' ),
+						'left'  => __( 'Left sidebar', 'community-fabricator' ),
+						'none'  => __( 'No sidebar', 'community-fabricator' ),
 					),
 					'priority'          => '20',
 				)
