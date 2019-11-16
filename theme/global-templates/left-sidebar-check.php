@@ -11,7 +11,7 @@ defined( 'ABSPATH' ) || exit;
 $sidebar_pos = get_theme_mod( 'understrap_sidebar_position' );
 ?>
 
-<?php if ( 'left' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
+<?php if ( ('left' === $sidebar_pos || 'both' === $sidebar_pos) && is_user_logged_in() ) : ?>
 	<?php get_template_part( 'sidebar-templates/sidebar', 'left' ); ?>
 <?php endif; ?>
 

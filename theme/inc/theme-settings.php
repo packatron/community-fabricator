@@ -22,7 +22,7 @@ if ( ! function_exists( 'understrap_setup_theme_default_settings' ) ) {
 		// Sidebar position.
 		$understrap_sidebar_position = get_theme_mod( 'understrap_sidebar_position' );
 		if ( '' == $understrap_sidebar_position ) {
-			set_theme_mod( 'understrap_sidebar_position', 'right' );
+			set_theme_mod( 'understrap_sidebar_position', 'both' );
 		}
 
 		// Container width.
